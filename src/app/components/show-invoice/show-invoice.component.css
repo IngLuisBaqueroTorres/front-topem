@@ -1,0 +1,50 @@
+    form fieldset {
+        float: left;
+        width: 48%;
+    }
+    
+    .flexbox-container {
+        display: -ms-flex;
+        display: -webkit-flex;
+        display: flex;
+        background: rgb(241, 241, 241);
+        border-radius: 7px;
+    }
+    
+    .flexbox-container>div {
+        width: 50%;
+        padding: 10px;
+    }
+    
+    .flexbox-container>div:first-child {
+        margin-right: 150px;
+    }
+    
+     ::ng-deep .mat-form-field-underline {
+        display: none;
+    }
+    
+    .main-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .mat-card {
+        margin-top: 30px;
+        width: 50%;
+        background-color: rgb(248, 248, 248);
+    }
+    
+    input {
+        cursor: default;
+    }
+    
+    textarea {
+        cursor: default;
+    }
+    
+    .matCardStyle {
+        display: flex;
+        justify-content: center;
+    }

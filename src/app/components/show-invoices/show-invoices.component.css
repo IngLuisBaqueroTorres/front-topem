@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+}
+
+th {
+    width: 10%;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.mat-card {
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 95%;
+    justify-content: center;
+}

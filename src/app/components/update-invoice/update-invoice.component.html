@@ -1,0 +1,70 @@
+<mat-card>
+    <mat-card-title>Actualizar Factura</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="updateForm" (ngSubmit)="onUpdate(updateForm.value)">
+            <div class="flexbox-container ">
+                <div>
+                    <p>
+                        <mat-form-field>
+                            <input type="text " matInput placeholder="N° Factura " formControlName="invoiceNumber" [(ngModel)]="invoice.invoiceNumber" />
+                        </mat-form-field>
+                    </p>
+
+                    <p>
+                        <mat-form-field>
+                            <input type="text " matInput placeholder="Nombre Emisor " formControlName="emitterName" [(ngModel)]="invoice.emitterName" />
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field>
+                            <input type="text " matInput placeholder="Nit del Emisor " formControlName="emitterNit" [(ngModel)]="invoice.emitterNit" />
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field>
+                            <input type="text " matInput placeholder="Comprador " formControlName="receptorName" [(ngModel)]="invoice.receptorName" />
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field>
+                            <input type="text " matInput placeholder="Nit del Comprador " formControlName="receptorNit" [(ngModel)]="invoice.receptorNit" />
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field>
+                            <input type="text " matInput placeholder="Valor sin IVA " formControlName="valueNoneVat" />
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field>
+                            <input type="text " matInput placeholder="IVA " formControlName="vat" />
+                        </mat-form-field>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <mat-form-field>
+                            <input type="text " matInput placeholder="Valor Total " formControlName="totalValue" />
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field><textarea matInput placeholder="Descripción del item " formControlName="itemDescription"></textarea>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field>
+                            <input type="text " matInput placeholder="Cantidad " formControlName="itemQuantity" />
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field>
+                            <input type="text " matInput placeholder="Valor del item " formControlName="itemUnitValue" />
+                        </mat-form-field>
+                    </p>
+                    <button type="submit" mat-raised-button color="primary">Actualizar</button>
+                    <button mat-raised-button color="basic" routerLink="/showInvoices">Volver</button>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

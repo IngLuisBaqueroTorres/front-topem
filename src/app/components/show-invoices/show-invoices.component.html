@@ -1,0 +1,60 @@
+<div class="mat-card">
+    <div class="mat-elevation-z8">
+        <mat-form-field>
+            <mat-label>Filtrar</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Filtrar" #input>
+        </mat-form-field>
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <ng-container matColumnDef="invoiceNumber">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> N° Factura </th>
+                <td mat-cell *matCellDef="let element"> {{element.invoiceNumber}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="emitterName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Emisor </th>
+                <td mat-cell *matCellDef="let element"> {{element.emitterName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="receptorName">
+                <th mat-header-cell *matHeaderCellDef> Comprador </th>
+                <td mat-cell *matCellDef="let element"> {{element.receptorName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="valueNoneVat">
+                <th mat-header-cell *matHeaderCellDef> Precio sin IVA </th>
+                <td mat-cell *matCellDef="let element"> {{element.valueNoneVat}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="vat">
+                <th mat-header-cell *matHeaderCellDef> IVA </th>
+                <td mat-cell *matCellDef="let element"> {{element.vat}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="totalValue">
+                <th mat-header-cell *matHeaderCellDef> Precio total </th>
+                <td mat-cell *matCellDef="let element"> {{element.totalValue}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="acciones">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element" style="text-align:right;">
+                    <a class="pointer" style="color: #1878b0;" matTooltip="Ver Factura" [routerLink]="['/showInvoice/', element.id]">
+                        <mat-icon>search</mat-icon>
+                    </a>
+
+                    <a class="pointer " style="color: #1f516f; " matTooltip="Editar Factura" [routerLink]="['/updateInvoice/', element.id]">
+                        <mat-icon>edit</mat-icon>
+                    </a>
+                </td>
+
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns "></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns; "></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5,10,20] " showFirstLastButtons></mat-paginator>
+    </div>
+    <button mat-raised-button color="primary" routerLink="/createInvoices" style="float: right;">Agregar</button>
+</div>
